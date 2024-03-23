@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     width: 50%;
     height: 50%;
-    border: 3px solid #000;
+    border: 3px solid var(--color-secondary);
     grid-template-rows: 8fr 2fr;
     grid-template-columns: repeat(4, 1fr);
 }
@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     height: 80%;
-    background: #ffffff;
+    background: var(--color-background);
     padding: 10px;
     grid-row: 1;
     grid-column: 1/5;
@@ -24,9 +24,9 @@
     justify-content: left;
     padding: 5px;
     transition: 0.2s;
-    background: linear-gradient(to left, #ffffff00 50%, rgb(50, 50, 50) 50%) right;
+    background: linear-gradient(to left, var(--color-background)00 50%, rgb(50, 50, 50) 50%) right;
     background-size: 200%;
-    border: 2px solid #000;
+    border: 2px solid var(--color-secondary);
     cursor: pointer;
     grid-row: 2;
 }

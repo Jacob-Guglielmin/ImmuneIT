@@ -1,0 +1,36 @@
+.qParent {
+    display: grid;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 50%;
+    border: 3px solid #000;
+    grid-template-rows: 8fr 2fr;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.qQuestion {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    background: #ffffff;
+    padding: 10px;
+    grid-row: 1;
+    grid-column: 1/5;
+}
+
+.qOption {
+    display: flex;
+    justify-content: left;
+    padding: 5px;
+    transition: 0.2s;
+    background: linear-gradient(to left, #ffffff00 50%, rgb(50, 50, 50) 50%) right;
+    background-size: 200%;
+    border: 2px solid #000;
+    cursor: pointer;
+    grid-row: 2;
+}
+
+.qOption:hover {
+    background-position: left;
+}

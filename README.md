@@ -26,7 +26,7 @@ Built @ <a href="https://www.ubcbiztech.com/">ProduHacks 2024</a>.
      gh repo clone Jacob-Guglielmin/ImmuneIT
      ```
 
-2. Open `index.html` in your browser.
+2. Open `index.html` in your browser. 
 
 ## 🎨 Colors
 

@@ -28,8 +28,10 @@ window.getEmployeeData = getEmployeeData;
 
 async function addQuestion(question) {
     const currentNumQuestions = await get(ref(db, "questionCount")).then((snapshot) => {
-        return snapshot.numChildren();
+        return snapshot.val();
     });
     const newQuestionRef = ref(db, "questions/" + currentNumQuestions);
     set(newQuestionRef, question);
+    set(ref(db, "questionCount"), currentNumQuestions + 1);
 }
+window.addQuestion = addQuestion;

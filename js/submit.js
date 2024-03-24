@@ -1,5 +1,5 @@
 document.getElementById("dbSubmit").addEventListener("click", function() {
-    var question = {
+    const question = {
         question: document.getElementById("dbQuestion").value,
         answer1: document.getElementById("dbAnswer1").value,
         answer2: document.getElementById("dbAnswer2").value,
@@ -11,7 +11,7 @@ document.getElementById("dbSubmit").addEventListener("click", function() {
         postIncorrect: document.getElementById("dbPostIncorrect").value
     };
 
-    // put question object into firebase
+    addQuestion(question);
 
     document.getElementById("dbQuestion").value = "";
     document.getElementById("dbAnswer1").value = "";

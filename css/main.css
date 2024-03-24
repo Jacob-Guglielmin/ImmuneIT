@@ -82,6 +82,7 @@ body {
 }
 
 #interfaceHeader {
+    position: relative;
     font-size: 3rem;
     width: 100%;
     text-align: center;

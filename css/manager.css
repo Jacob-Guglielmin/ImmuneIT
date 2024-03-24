@@ -48,16 +48,20 @@
     resize: none;
     border: 1px solid var(--color-secondary);
     border-radius: 5px;
+    font-family: 'DM Sans', sans-serif;
 }
 
 #dbAnswer1, #dbAnswer2, #dbAnswer3, #dbAnswer4 {
     width: 45%;
+    font-family: 'DM Sans', sans-serif;
 }
 
 #dbCorrect, #dbCategory {
     width: 100%;
+    font-family: 'DM Sans', sans-serif;
 }
 
 #dbPostCorrect, #dbPostIncorrect {
     width: 100%;
+    font-family: 'DM Sans', sans-serif;
 }

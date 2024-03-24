@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+import { getDatabase, ref, get, set } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCjHL4mOo6DrC7W25T9sRW0wtMrYdazf6Y",
@@ -25,3 +25,11 @@ async function getEmployeeData(employeeID) {
     });
 }
 window.getEmployeeData = getEmployeeData;
+
+async function addQuestion(question) {
+    const currentNumQuestions = await get(ref(db, "questionCount")).then((snapshot) => {
+        return snapshot.numChildren();
+    });
+    const newQuestionRef = ref(db, "questions/" + currentNumQuestions);
+    set(newQuestionRef, question);
+}

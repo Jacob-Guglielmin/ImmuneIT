@@ -7,6 +7,9 @@ ImmuneIT is a cybersecurity web-application for growing businesses in healthcare
 
 Built @ <a href="https://www.ubcbiztech.com/">ProduHacks 2024</a>.
 
+- <a href="https://docs.google.com/presentation/d/1-n3TxJ4DZhrRjitv1J1P5_ZW9XMXZCaXeIF2ptuVyGc/edit?usp=sharing">View Presentation</a>
+- <a href="https://drive.google.com/file/d/146ics9jRO83E1MyJdl26ShSZYulvfqhN/view?usp=sharing">View Demo</a>
+
 ## 🛠 Setup
 
 1. Clone the repository using one of the following methods. 

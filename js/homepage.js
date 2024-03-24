@@ -4,12 +4,34 @@ const progressElement = document.getElementById("amountDone");
 
 const employeeID = 1;
 
+let pendingQueries = 2;
+
+let categoryCounts = null;
+let totalQuestions = 0;
+let employee = null;
+
+getCategoryCounts().then((data) => {
+    categoryCounts = data;
+
+    for (let category in data) {
+        totalQuestions += data[category];
+    }   
+
+    pendingQueries--;
+    if (pendingQueries == 0) init();
+});
+
 getEmployeeData(employeeID).then((data) => {
-    console.log(data);
+    employee = data;
     employeeNameElement.innerText = data.name;
 
+    pendingQueries--;
+    if (pendingQueries == 0) init();
+});
+
+function init() {
     let total = 0;
-    for (let skill in data.skills) {
+    for (let skill in employee.skills) {
         const skillElement = document.createElement("div");
         const skillBarContainer = document.createElement("div");
         const skillBar = document.createElement("div");
@@ -19,11 +41,11 @@ getEmployeeData(employeeID).then((data) => {
         skillElement.appendChild(skillName);
         skillName.textContent = skill;
 
-        skillBar.style.height = (data.skills[skill] * (97/100)) + "%";
+        skillBar.style.height = (employee.skills[skill] * (97 / categoryCounts[skill])) + "%";
 
         skillsChart.appendChild(skillElement);
 
-        total += data.skills[skill];
+        total += employee.skills[skill];
     }
-    progressElement.innerText = Math.floor((total / Object.keys(data.skills).length)) + "%";
-});
+    progressElement.innerText = Math.floor((total / totalQuestions)) + "%";
+}

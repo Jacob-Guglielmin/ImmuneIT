@@ -64,3 +64,9 @@ async function getCategoryCounts() {
     });
 }
 window.getCategoryCounts = getCategoryCounts;
+
+function setQuestionCompleted(id, question, index) {
+    set(ref(db, `employees/${id}/completedQuestionIDs/${index}`), question);
+}
+
+window.setQuestionCompleted = setQuestionCompleted;

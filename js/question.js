@@ -23,6 +23,9 @@ let categoryCounts = null;
 let correct = 0;
 let total = 0;
 
+let currentQuestion = null;
+let selectedQuestions = [];
+
 getQuestions().then((data) => {
     questions = data;
     if (isOtherDone == 2) {
@@ -34,6 +37,7 @@ getQuestions().then((data) => {
 
 getEmployeeData(employeeId).then((data) => {
     employee = data;
+    selectedQuestions = employee.completedQuestionIDs || [];
     if (isOtherDone == 2) {
         loadFirstQuestion();
     } else {
@@ -44,22 +48,11 @@ getEmployeeData(employeeId).then((data) => {
 getCategoryCounts().then((data) => {
     categoryCounts = data;
     if (isOtherDone == 2) {
-        loadFirstQuestion();
+        loadNextQuestion();
     } else {
         isOtherDone++;
     }
 });
-
-let currentQuestion = null;
-let selectedQuestions = [];
-
-const loadFirstQuestion = () => {
-    let randomSelect = Math.floor(Math.random() * questions.length);
-    selectedQuestions.push(randomSelect);
-    let question = questions[randomSelect];
-    currentQuestion = question;
-    loadQuestion(question);
-}
 
 const loadNextQuestion = () => {
     let nextQuestion = document.getElementById("nextQuestion");
@@ -68,7 +61,6 @@ const loadNextQuestion = () => {
     if (filtered.length > 0) {
         let randomSelect = Math.floor(Math.random() * filtered.length);
         let question = filtered[randomSelect];
-        selectedQuestions.push(questions.indexOf(question));
         currentQuestion = question;
         loadQuestion(question);
     } else {
@@ -142,6 +134,8 @@ const clickHandler = (option) => {
         nextQuestion.innerHTML = "Finish Quiz";
     }
     total++;
+    setQuestionCompleted(employeeId, questions.indexOf(currentQuestion), selectedQuestions.length);
+    selectedQuestions.push(questions.indexOf(currentQuestion));
 }
 
 const loadEndQuizScreen = () => {

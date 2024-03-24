@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://github.com/Jacob-Guglielmin/ImmuneIT/blob/master/banner.png?raw=true">
+  <img src="https://raw.githubusercontent.com/Jacob-Guglielmin/ImmuneIT/master/rounded-banner.png">
 </h1>
 
 ## 🖋️ Introduction

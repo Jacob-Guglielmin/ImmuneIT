@@ -12,10 +12,41 @@ class Question {
     }
 }
 
-let testQ = new Question("what is love? ", "option 1", "option 2", "option 3", "option 4", 2, "curling", "YOOO LETS GO U GOT IT RIGHT", "dumbass");
+let questions = [];
 
+fetch("./questions.json").then((data) => 
+{return data.json()}).then((data) => {questions = data.questions; loadFirstQuestion()});
 
-let currentQuestion = testQ;
+let currentQuestion = null;
+let selectedQuestions = [];
+
+const loadFirstQuestion = () => {
+    let randomSelect = Math.floor(Math.random() * questions.length);
+    selectedQuestions.push(randomSelect);
+    let question = questions[randomSelect];
+    currentQuestion = question;
+    loadQuestion(question);
+}
+
+const loadNextQuestion = () => {
+    let nextQuestion = document.getElementById("nextQuestion");
+    nextQuestion.setAttribute("style", "display: none");
+    let filtered = questions.filter((question) => selectedQuestions.indexOf(questions.indexOf(question)) < 0);
+    if (filtered.length > 0) {
+        let randomSelect = Math.floor(Math.random() * filtered.length);
+        let question = filtered[randomSelect];
+        selectedQuestions.push(questions.indexOf(question));
+        currentQuestion = question;
+        loadQuestion(question);
+    } else {
+        alert("Out of questions!");
+    }
+}
+
+const loadQuestion = (q) => {
+    document.getElementById("interfaceContainer").innerHTML = "";
+    document.getElementById("interfaceContainer").appendChild(makeQuestion(q));
+}
 
 // Takes in a Question object pertaining to the question
 // Returns a div containing the question
@@ -70,7 +101,6 @@ const clickHandler = (option) => {
         clicked.classList.add("incorrectSelected");
         document.getElementsByClassName("qQuestion")[0].innerHTML = currentQuestion.postIncorrect;
     }
-    
+    let nextQuestion = document.getElementById("nextQuestion");
+    nextQuestion.setAttribute("style", "display: flex");
 }
-
-document.getElementById("interfaceContainer").appendChild(makeQuestion(testQ));

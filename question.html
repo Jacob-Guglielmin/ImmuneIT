@@ -7,15 +7,18 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="./css/main.css" />
         <link rel="stylesheet" href="./css/question.css" />
-        <script src="./js/question.js" defer></script>
+        <script type="text/javascript" src="./js/question.js" defer></script>
+        <script type="text/javascript" src="./questions.json" defer></script>
     </head>
     <body>
         <div id="header">
             <span>ImmuneIT</span>
         </div>
         <div id="rootContainer">
-            <span id="interfaceHeader">Question ??</span>
             <div id="interfaceContainer">
+            </div>
+            <div id="nextQuestion" onclick="loadNextQuestion()" class="hoverEffect" style="display: none">
+                Next Question
             </div>
         </div>
     </body>

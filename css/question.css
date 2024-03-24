@@ -8,7 +8,6 @@
     height: calc(100% - 8px);
     grid-template-rows: 3fr 1fr 1fr;
     grid-template-columns: repeat(2, 1fr);
-    background: var(--color-background-alt);
 }
 
 .qQuestion {

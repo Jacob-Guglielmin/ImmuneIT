@@ -34,6 +34,7 @@ const makeQuestion = (content) => {
     parent.appendChild(qBox);
     for (let i = 0; i < options.length; i++) {
         options[i].classList.add("qOption");
+        options[i].setAttribute("onclick", `clickHandler(${i})`);
         if (i % 2 == 0) {
             options[i].style.gridColumnStart = `1`;
             options[i].style.gridColumnEnd = `2`;
@@ -41,7 +42,6 @@ const makeQuestion = (content) => {
             options[i].style.gridColumnStart = `2`;
             options[i].style.gridColumnEnd = `3`;
         }
-        
         parent.appendChild(options[i]);
     }
     o1.classList.add("qOptionTop");
@@ -53,7 +53,12 @@ const makeQuestion = (content) => {
 }
 
 const clickHandler = (option) => {
-
+    let clicked = document.getElementsByClassName("qOption")[option];
+    if (clicked.classList.contains("correct")) {
+        clicked.classList.add("correctSelected");
+    } else {
+        clicked.classList.add("incorrectSelected");
+    }
 }
 
 document.getElementById("interfaceContainer").appendChild(makeQuestion(testQ));

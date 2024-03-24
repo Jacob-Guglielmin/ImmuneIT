@@ -54,3 +54,11 @@
 .qOption:hover {
     background-position: left;
 }
+
+.correctSelected {
+    background: #33d69d;
+}
+
+.incorrectSelected {
+    background: #868686;
+}

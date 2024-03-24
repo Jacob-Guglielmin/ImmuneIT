@@ -9,7 +9,7 @@ Built @ <a href="https://www.ubcbiztech.com/">ProduHacks 2024</a>.
 
 ## 🛠 Setup
 
-1. Clone the repository using one of the following methods.
+1. Clone the repository using one of the following methods. 
 
     HTTPS:
      ```bash

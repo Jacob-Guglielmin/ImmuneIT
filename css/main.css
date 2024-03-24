@@ -96,6 +96,10 @@ body {
     flex: 1;
 }
 
+#interfaceContainer > * {
+    overflow: hidden;
+}
+
 .hoverEffect {
     transition: 0.2s;
     background: linear-gradient(to left, var(--color-background-alt)00 50%, var(--color-highlight) 50%) right;

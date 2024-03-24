@@ -26,7 +26,7 @@ function getTopEmployees() {
     for (let i = 0; i < employees.length; i++) {
         var avg = (employees[i].skills["Phishing"] + 
                    employees[i].skills["Privacy"] + 
-                   employees[i].skills["Social Engineering"]) / 
+                   employees[i].skills["Data Security"]) / 
                    questionCount;
             
         scores[employees[i].name] = avg;
@@ -40,7 +40,7 @@ function getTopEmployees() {
     for (let i = 0; i < top5.length; i++) {
         var employee = document.createElement("p");
         employee.className = "topEmployee";
-        employee.innerText = `${i + 1}. ${top5[i][0]} (${Math.round(top5[i][1] * 100)}% done)`;
+        employee.innerText = `${i + 1}. ${top5[i][0]} (${Math.floor(top5[i][1] * 100)}% done)`;
         employeesContainer.appendChild(employee);
     }
 }

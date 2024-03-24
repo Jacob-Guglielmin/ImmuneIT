@@ -68,7 +68,6 @@ window.getCategoryCounts = getCategoryCounts;
 function setQuestionCompleted(id, question, index) {
     set(ref(db, `employees/${id}/completedQuestionIDs/${index}`), question);
 }
-
 window.setQuestionCompleted = setQuestionCompleted;
 
 async function getAllEmployees() {
@@ -76,5 +75,4 @@ async function getAllEmployees() {
         return snapshot.val();
     });
 }
-
 window.getAllEmployees = getAllEmployees;

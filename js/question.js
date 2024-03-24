@@ -17,8 +17,11 @@ let questions = [];
 let correct = 0;
 let total = 0;
 
-fetch("./questions.json").then((data) => 
-{return data.json()}).then((data) => {questions = data.questions; loadFirstQuestion()});
+getQuestions().then((data) => {
+    console.log(data);
+    questions = data.questions;
+    loadFirstQuestion();
+});
 
 let currentQuestion = null;
 let selectedQuestions = [];

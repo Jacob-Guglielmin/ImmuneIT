@@ -35,3 +35,10 @@ async function addQuestion(question) {
     set(ref(db, "questionCount"), currentNumQuestions + 1);
 }
 window.addQuestion = addQuestion;
+
+async function getQuestions() {
+    return await get(ref(db, "questions")).then((snapshot) => {
+        return snapshot.val();
+    });
+}
+window.getQuestions = getQuestions;

@@ -2,11 +2,13 @@
     display: grid;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 4px;
+    padding: 4px;
+    border-radius: 5px;
     width: auto;
     height: calc(100% - 8px);
     grid-template-rows: 3fr 1fr 1fr;
     grid-template-columns: repeat(2, 1fr);
+    background: var(--color-background-alt);
 }
 
 .qQuestion {
@@ -19,6 +21,7 @@
     grid-row: 1;
     grid-column: 1/5;
     font-size: 2em;
+    background: transparent;
 }
 
 .qOption {

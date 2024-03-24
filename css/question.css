@@ -1,33 +1,53 @@
+:root {
+    --color-highlight: #b6ebee;
+}
+
 .qParent {
     display: grid;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 50%;
-    height: 50%;
-    border: 3px solid var(--color-secondary);
-    grid-template-rows: 8fr 2fr;
-    grid-template-columns: repeat(4, 1fr);
+    margin: 4px;
+    width: auto;
+    height: calc(100% - 8px);
+    grid-template-rows: 3fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .qQuestion {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 80%;
     background: var(--color-background);
     padding: 10px;
     grid-row: 1;
     grid-column: 1/5;
+    font-size: 3em;
 }
 
 .qOption {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     padding: 5px;
     transition: 0.2s;
-    background: linear-gradient(to left, var(--color-background)00 50%, rgb(50, 50, 50) 50%) right;
+    background: linear-gradient(to left, var(--color-background)00 50%, var(--color-highlight) 50%) right;
     background-size: 200%;
-    border: 2px solid var(--color-secondary);
+    border-right: 8px solid var(--color-secondary);
+    border-top: 4px solid var(--color-secondary);
+    grid-row: 3;
+    margin-left: -4px;
+    margin-bottom: -4px;
+    align-items: center;
+    font-size: 1.5em;
     cursor: pointer;
+}
+
+.qOptionRight {
+    border-right: none;
+    margin-right: -4px;
+}
+
+.qOptionTop {
     grid-row: 2;
 }
 

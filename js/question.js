@@ -10,7 +10,7 @@ class Question {
     }
 }
 
-let testQ = new Question("what is love?", "option 1", "option 2", "option 3", "option 4", 2)
+let testQ = new Question("what is love? what is love? what is love? what is love? what is love? what is love? what is love? what is love? what is love? what is love? what is love? what is love? ", "option 1", "option 2", "option 3", "option 4", 2)
 
 
 // Takes in a Question object pertaining to the question
@@ -34,11 +34,26 @@ const makeQuestion = (content) => {
     parent.appendChild(qBox);
     for (let i = 0; i < options.length; i++) {
         options[i].classList.add("qOption");
-        options[i].style.gridColumnStart = `${i+1}`;
-        options[i].style.gridColumnEnd = `${i+2}`;
+        if (i % 2 == 0) {
+            options[i].style.gridColumnStart = `1`;
+            options[i].style.gridColumnEnd = `2`;
+        } else {
+            options[i].style.gridColumnStart = `2`;
+            options[i].style.gridColumnEnd = `3`;
+        }
+        
         parent.appendChild(options[i]);
     }
+    o1.classList.add("qOptionTop");
+    o2.classList.add("qOptionRight", "qOptionTop");
+    o4.classList.add("qOptionRight");
+    o3.style.borderRadius = "0 0 0 7px";
+    o4.style.borderRadius = "0 0 7px 0";
     return parent;
 }
 
-document.getElementById("questionBox").appendChild(makeQuestion(testQ));
+const clickHandler = (option) => {
+
+}
+
+document.getElementById("interfaceContainer").appendChild(makeQuestion(testQ));

@@ -1,9 +1,11 @@
 <h1 align="center">
-  ImmuneIT
+  <img src="https://github.com/Jacob-Guglielmin/ImmuneIT/blob/master/banner.png?raw=true">
 </h1>
-<p align="center">
-  A cybersecurity app designed for growing businesses in healthcare. Built @ <a href="https://www.ubcbiztech.com/">ProduHacks 2024</a>.
-</p>
+
+## 🖋️ Introduction
+ImmuneIT is a cybersecurity web-application for growing businesses in healthcare, designed to be used by both managers and employees. 
+
+Built @ <a href="https://www.ubcbiztech.com/">ProduHacks 2024</a>.
 
 ## 🛠 Setup
 

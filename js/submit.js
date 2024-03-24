@@ -1,10 +1,10 @@
 document.getElementById("dbSubmit").addEventListener("click", function() {
     const question = {
         question: document.getElementById("dbQuestion").value,
-        answer1: document.getElementById("dbAnswer1").value,
-        answer2: document.getElementById("dbAnswer2").value,
-        answer3: document.getElementById("dbAnswer3").value,
-        answer4: document.getElementById("dbAnswer4").value,
+        option1: document.getElementById("dbAnswer1").value,
+        option2: document.getElementById("dbAnswer2").value,
+        option3: document.getElementById("dbAnswer3").value,
+        option4: document.getElementById("dbAnswer4").value,
         correct: Number(document.getElementById("dbCorrect").value),
         category: document.getElementById("dbCategory").value,
         postCorrect: document.getElementById("dbPostCorrect").value,

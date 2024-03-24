@@ -12,15 +12,42 @@ class Question {
     }
 }
 
+let isOtherDone = 0;
+
+let employee = null;
+let employeeId = 0;
 let questions = [];
+
+let categoryCounts = null;
 
 let correct = 0;
 let total = 0;
 
 getQuestions().then((data) => {
-    console.log(data);
-    questions = data.questions;
-    loadFirstQuestion();
+    questions = data;
+    if (isOtherDone == 2) {
+        loadFirstQuestion();
+    } else {
+        isOtherDone++;
+    }
+});
+
+getEmployeeData(employeeId).then((data) => {
+    employee = data;
+    if (isOtherDone == 2) {
+        loadFirstQuestion();
+    } else {
+        isOtherDone++;
+    }
+});
+
+getCategoryCounts().then((data) => {
+    categoryCounts = data;
+    if (isOtherDone == 2) {
+        loadFirstQuestion();
+    } else {
+        isOtherDone++;
+    }
 });
 
 let currentQuestion = null;
@@ -104,6 +131,7 @@ const clickHandler = (option) => {
         clicked.classList.add("correctSelected");
         document.getElementsByClassName("qQuestion")[0].innerHTML = currentQuestion.postCorrect;
         correct++;
+        setEmployeeSkill(employeeId, currentQuestion.category, employee.skills[currentQuestion.category] + 1);
     } else {
         clicked.classList.add("incorrectSelected");
         document.getElementsByClassName("qQuestion")[0].innerHTML = currentQuestion.postIncorrect;

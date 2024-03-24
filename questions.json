@@ -1,0 +1,26 @@
+{
+    "questions": [
+        {
+            "question": "Dr. Randy Cook is speaking to an elderly patient, Ruth, who is struggling to use Zoom — he cannot make out what Ruth is saying. As a solution, Dr. Cook suggests using FaceTime instead. Ruth agrees and they use FaceTime for the remainder of their appointment.",
+            "option1": "Nothing.",
+            "option2": "Dr. Cook should not have suggested FaceTime because of the security and privacy risks.",
+            "option3": "Dr. Cook should have informed Ruth of the privacy risks before using FaceTime.",
+            "option4": "B & C.",
+            "correct": 2,
+            "category": "Privacy",
+            "postCorrect": "Well done! Instead, Dr. Cook could have suggested a different secure telehealth platform or asked Ruth if she would like to reschedule an in-person appointment.",
+            "postIncorrect": "Incorrect! FaceTime is not approved for telehealth usage. Even if Ruth was aware of the privacy risks, personal information leaks puts the patient at an unnecessary risk, which is a violation of the company’s privacy policy. Instead, Dr. Cook could have suggested another secure application or asked Ruth if she would like to reschedule an in-person appointment."
+        },
+        {
+            "question": "Your boss, Dr. Smith, send you a link to a google document, asking you to fill out your personal information. The URL is https://docsgoogle.com/ and the document looks like a normal Google Document. What should you do?",
+            "option1": "Fill out the document.",
+            "option2": "Text Dr. Smith and ask if the link is legitimate.",
+            "option3": "Talk to Dr. Smith in person and ask if the link is legitimate.",
+            "option4": "Ask your coworkers if they received the same link.",
+            "correct": 3,
+            "category": "Phishing",
+            "postCorrect": "Well done! It is always best to verify the legitimacy of the link before providing any personal information.",
+            "postIncorrect": "Incorrect! It is always best to verify the legitimacy of the link before providing any personal information."
+        }
+    ]
+}

@@ -4,11 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ImmuneIT</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="stylesheet" href="./css/main.css" />
-        <link rel="stylesheet" href="./css/question.css" />
-        <script type="text/javascript" src="./js/question.js" defer></script>
-        <script type="text/javascript" src="./questions.json" defer></script>
+        <link rel="stylesheet" href="./css/homepage.css" />
+        <link rel="stylesheet" href="./css/manager.css" />
+        <script src="./js/ai.js" type="module" defer></script>
+        <script src="./js/submit.js" defer></script>
     </head>
     <body>
         <div id="header">
@@ -22,14 +23,12 @@
             </div>
         </div>
         <div id="rootContainer">
-            <div id="interfaceContainer">
-            </div>
-            <div id="nextQuestion" onclick="loadNextQuestion()" class="hoverEffect" style="display: none">
-                Next Question
-            </div>
-            <div id="mainMenu" onclick="window.location.href = './index.html'" class="hoverEffect" style="display: none">
-                Return to Main Menu
-            </div>
+            <span id="interfaceHeader">Sign In (demo)</span>
+            <!-- link to index -->
+            <a href="./index.html" style="font-size: 2rem; text-decoration: none; background-color: none; color: black">Employee Sign-in</a> <br><br>
+
+            <!-- link to manager -->
+            <a href="./manager.html" style="font-size: 2rem; text-decoration: none; background-color: none; color: black">Manager Sign-in</a>
         </div>
     </body>
 </html>

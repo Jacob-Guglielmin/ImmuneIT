@@ -15,8 +15,6 @@ const app = initializeApp(firebaseConfig);
 
 const db = getDatabase();
 
-let questionCount = undefined;
-
 async function getEmployeeData(employeeID) {
     return await get(ref(db, "employees/" + employeeID)).then((snapshot) => {
         if (snapshot.exists()) {
@@ -33,6 +31,11 @@ async function addQuestion(question) {
     const newQuestionRef = ref(db, "questions/" + currentNumQuestions);
     set(newQuestionRef, question);
     set(ref(db, "questionCount"), currentNumQuestions + 1);
+
+    let currentTypeCount = await get(ref(db, "questionTypeCounts/" + question.category)).then((snapshot) => {
+        return snapshot.val();
+    });
+    set(ref(db, "questionTypeCounts/" + question.category), currentTypeCount + 1);
 }
 window.addQuestion = addQuestion;
 
@@ -46,19 +49,13 @@ window.getQuestions = getQuestions;
 function setEmployeeSkill(id, skillName, value) {
     set(ref(db, `employees/${id}/skills/${skillName}`), value);
 }
-
 window.setEmployeeSkill = setEmployeeSkill;
 
 async function getQuestionCount() {
-    if (questionCount != undefined) {
-        return questionCount;
-    }
-    questionCount = await get(ref(db, "questionCount")).then((snapshot) => {
+    return await get(ref(db, "questionCount")).then((snapshot) => {
         return snapshot.val();
     });
-    return questionCount;
 }
-
 window.getQuestionCount = getQuestionCount;
 
 async function getCategoryCounts() {
@@ -66,5 +63,4 @@ async function getCategoryCounts() {
         return snapshot.val();
     });
 }
-
 window.getCategoryCounts = getCategoryCounts;

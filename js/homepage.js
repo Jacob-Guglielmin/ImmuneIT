@@ -2,7 +2,7 @@ const employeeNameElement = document.getElementById("employeeName");
 const skillsChartElement = document.getElementById("skillsChart");
 const progressElement = document.getElementById("amountDone");
 
-const employeeID = 1;
+const employeeID = 0;
 
 let pendingQueries = 2;
 
@@ -15,7 +15,7 @@ getCategoryCounts().then((data) => {
 
     for (let category in data) {
         totalQuestions += data[category];
-    }   
+    }
 
     pendingQueries--;
     if (pendingQueries == 0) init();
@@ -41,11 +41,11 @@ function init() {
         skillElement.appendChild(skillName);
         skillName.textContent = skill;
 
-        skillBar.style.height = (employee.skills[skill] * (97 / categoryCounts[skill])) + "%";
+        skillBar.style.height = employee.skills[skill] * (97 / categoryCounts[skill]) + "%";
 
         skillsChart.appendChild(skillElement);
 
         total += employee.skills[skill];
     }
-    progressElement.innerText = Math.floor((total / totalQuestions)) + "%";
+    progressElement.innerText = Math.floor(total / totalQuestions) + "%";
 }

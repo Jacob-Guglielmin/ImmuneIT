@@ -14,6 +14,9 @@ class Question {
 
 let questions = [];
 
+let correct = 0;
+let total = 0;
+
 fetch("./questions.json").then((data) => 
 {return data.json()}).then((data) => {questions = data.questions; loadFirstQuestion()});
 
@@ -39,7 +42,7 @@ const loadNextQuestion = () => {
         currentQuestion = question;
         loadQuestion(question);
     } else {
-        alert("Out of questions!");
+        loadEndQuizScreen();
     }
 }
 
@@ -97,10 +100,43 @@ const clickHandler = (option) => {
     if (clicked.classList.contains("correct")) {
         clicked.classList.add("correctSelected");
         document.getElementsByClassName("qQuestion")[0].innerHTML = currentQuestion.postCorrect;
+        correct++;
     } else {
         clicked.classList.add("incorrectSelected");
         document.getElementsByClassName("qQuestion")[0].innerHTML = currentQuestion.postIncorrect;
     }
     let nextQuestion = document.getElementById("nextQuestion");
     nextQuestion.setAttribute("style", "display: flex");
+    if (questions.filter((question) => selectedQuestions.indexOf(questions.indexOf(question)) < 0).length == 0) {
+        nextQuestion.innerHTML = "Finish Quiz";
+    }
+    total++;
+}
+
+const loadEndQuizScreen = () => {
+    let interfaceContainer = document.getElementById("interfaceContainer");
+    interfaceContainer.innerHTML = "";
+    let parent = document.createElement("div");
+    parent.classList.add("endScreen");
+    let text1 = document.createElement("div");
+    text1.innerHTML = "Congratulations! You have completed the quiz. Your final score is:";
+    text1.classList.add("endHeader");
+    let score = document.createElement("div");
+    let correctText = document.createElement("span");
+    correctText.innerHTML = `${correct}`;
+    correctText.classList.add("scoreValue");
+    let outOf = document.createElement("span");
+    outOf.innerHTML = " out of ";
+    outOf.classList.add("endText");
+    let totalText = document.createElement("span");
+    totalText.innerHTML = `${total}`;
+    totalText.classList.add("scoreValue");
+    score.appendChild(correctText);
+    score.appendChild(outOf);
+    score.appendChild(totalText);
+    parent.appendChild(text1);
+    parent.appendChild(score);
+    interfaceContainer.appendChild(parent);
+    let menuBtn = document.getElementById("mainMenu");
+    menuBtn.setAttribute("style", "display: flex");
 }

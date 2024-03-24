@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ImmuneIT</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/homepage.css" />
+        <link rel="stylesheet" href="./css/manager.css" />
+        <script src="./js/ai.js" type="module" defer></script>
+        <script src="./js/submit.js" defer></script>
+    </head>
+    <body>
+        <div id="header">
+            <span>ImmuneIT</span>
+        </div>
+        <div id="rootContainer">
+            <span id="interfaceHeader">Hello, Rodriguez</span>
+            <div id="interfaceContainer">
+                <div id="employeeTracker">
+                    <h1>Top Employees:</h1>
+                    <p>1. Markathan</p>
+                </div>
+                <div id="databaseContainer">
+                    <div id="fieldContainer">
+                        <input class="dbField" id="dbQuestion" placeholder="Enter question here">
+                        <input class="dbField" id="dbAnswer1" placeholder="Answer option">
+                        <input class="dbField" id="dbAnswer2" placeholder="Answer option">
+                        <input class="dbField" id="dbAnswer3" placeholder="Answer option">
+                        <input class="dbField" id="dbAnswer4" placeholder="Answer option">
+                        <input class="dbField" id="dbCorrect" placeholder="Correct answer (1-4)">
+                        <input class="dbField" id="dbCategory" placeholder="Category">
+                        <input class="dbField" id="dbPostCorrect" placeholder="Message for correct answer">
+                        <input class="dbField" id="dbPostIncorrect" placeholder="Message for incorrect answer">
+                        <button id="dbSubmit">Submit</button>
+                    </div>
+                </div>
+                <div id="goToQuizContainer">
+                    <a id="goToQuizButton" href="./question.html" class="hoverEffect">Continue to quiz →</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

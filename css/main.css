@@ -2,6 +2,7 @@
     --color-background: #f7f7f7;
     --color-primary: #000;
     --color-secondary: #02dee9;
+    --color-highlight: #b6ebee;
 }
 
 /* latin-ext */
@@ -82,6 +83,7 @@ body {
 }
 
 #interfaceHeader {
+    position: relative;
     font-size: 3rem;
     width: 100%;
     text-align: center;
@@ -92,4 +94,14 @@ body {
     border-radius: 10px;
     width: 100%;
     flex: 1;
+}
+
+.hoverEffect {
+    transition: 0.2s;
+    background: linear-gradient(to left, transparent 50%, var(--color-highlight) 50%) right;
+    background-size: 200%;
+}
+
+.hoverEffect:hover {
+    background-position: left;
 }

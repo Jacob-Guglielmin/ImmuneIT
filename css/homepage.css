@@ -22,12 +22,17 @@
     border-radius: 0 7px 0 0;
 }
 
-#goToQuizButton {
-    display: flex;
+#goToQuizContainer {
+    display: relative;
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     border-radius: 0 0 7px 0;
+}
 
+#goToQuizButton {
+    display: flex;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
 

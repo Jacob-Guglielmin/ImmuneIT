@@ -121,6 +121,7 @@ body {
 #headerLeft {
     display: flex;
     align-items: left;
+    gap: 1rem;
 }
 
 #headerRight {

@@ -47,5 +47,5 @@ function init() {
 
         total += employee.skills[skill];
     }
-    progressElement.innerText = Math.floor(total / totalQuestions) + "%";
+    progressElement.innerText = Math.floor(total / totalQuestions * 100) + "%";
 }

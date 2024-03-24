@@ -33,7 +33,7 @@ const makeQuestion = (content) => {
     options[content.correct - 1].classList.add("correct");
     parent.appendChild(qBox);
     for (let i = 0; i < options.length; i++) {
-        options[i].classList.add("qOption");
+        options[i].classList.add("qOption", "hoverEffect");
         options[i].setAttribute("onclick", `clickHandler(${i})`);
         if (i % 2 == 0) {
             options[i].style.gridColumnStart = `1`;

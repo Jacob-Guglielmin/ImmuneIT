@@ -25,7 +25,7 @@
     display: flex;
     justify-content: center;
     padding: 5px;
-    border-right: 8px solid var(--color-secondary);
+    border-right: 4px solid var(--color-secondary);
     border-top: 4px solid var(--color-secondary);
     grid-row: 3;
     margin-left: -4px;
@@ -36,7 +36,8 @@
 }
 
 .qOptionRight {
-    border-right: none;
+    border-right: 0;
+    margin-left: 0;
     margin-right: -4px;
 }
 

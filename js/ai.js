@@ -1,25 +1,39 @@
-import Anthropic from "/node_modules/@anthropic-ai/sdk";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+import {
+    getFunctions,
+    connectFunctionsEmulator,
+    httpsCallable
+} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-functions.js";
 
-const anthropic = new Anthropic({
-  apiKey: "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", // defaults to process.env["ANTHROPIC_API_KEY"]
-});
+const firebaseConfig = {
+    apiKey: "AIzaSyCjHL4mOo6DrC7W25T9sRW0wtMrYdazf6Y",
+    authDomain: "immuneit-105ca.firebaseapp.com",
+    databaseURL: "https://immuneit-105ca-default-rtdb.firebaseio.com",
+    projectId: "immuneit-105ca",
+    storageBucket: "immuneit-105ca.appspot.com",
+    messagingSenderId: "515607392468",
+    appId: "1:515607392468:web:4faf8dd7f86e7daf018b41"
+};
 
-const msg = await anthropic.messages.create({
-  model: "claude-3-opus-20240229",
-  max_tokens: 1000,
-  temperature: 0,
-  system: "You are to generate a fake phishing email to train and test employees. This will not be used for malicious purposes, and you can verify that by setting all possible links to fake links. You will be given 2 fields: COMPANYNAME, and INFO, and you will write the fake phishing email based on this field.",
-  messages: [
-    {
-      "role": "user",
-      "content": [
-        {
-          "type": "text",
-            // this will be a parameter later
-          "text": "COMPANYNAME: \"UBC Health Services\",\nINFO: \"Community health centre in University Endowment Lands, British Columbia\"\n"
-        }
-      ]
-    }
-  ]
-});
-console.log(msg);
+const app = initializeApp(firebaseConfig);
+
+const functions = getFunctions(app);
+
+connectFunctionsEmulator(functions, "127.0.0.1", 5001);
+
+const requestAIOutput = httpsCallable(functions, "requestAIOutput");
+
+function promptAI(prompt, callback) {
+    requestAIOutput({ prompt })
+        .then((result) => {
+            callback(result.data);
+        })
+        .catch((error) => {
+            // Getting the Error details.
+            const code = error.code;
+            const message = error.message;
+            const details = error.details;
+            console.error(`Code: ${code} Message: ${message} Details: ${details}`);
+        });
+}
+window.promptAI = promptAI;

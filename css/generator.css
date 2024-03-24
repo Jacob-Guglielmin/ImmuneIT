@@ -1,0 +1,88 @@
+#outputContainer, #promptContainer {
+    position: relative;
+    margin: 2rem;
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+}
+
+input, textarea {
+    font-family: "DM Sans", sans-serif;
+}
+
+#promptContainer > *{
+    overflow: hidden;
+}
+
+#promptContainer {
+    display: grid;
+    grid-template-columns: 1.75fr 3fr 1fr;
+    grid-template-rows: min-content 0.5fr 0.5fr 0.5fr 0.5fr 3fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+h1 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+#promptContainer > label {
+    grid-column: 1 / 2;
+}
+
+#promptContainer > :not(h1, label, .button, #info) {
+    grid-column: 2 / -1;
+    border: 2px solid var(--color-secondary);
+    border-radius: 5px;
+}
+
+#promptContainer > * {
+    font-size: 2rem;
+}
+
+#extraInformation {
+    resize: none;
+    height: 100%;
+    margin: 0;
+}
+
+#info {
+    grid-column: 1 / -2;
+}
+
+.button {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color-secondary);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#outputContainer {
+    display: grid;
+    grid-template-columns: 1fr 3.75fr 1fr;
+    grid-template-rows: min-content 7fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+#output {
+    resize: none;
+    width: 100%;
+    border: 2px solid var(--color-secondary);
+    border-radius: 5px;
+    box-sizing: border-box;
+    grid-column: 1 / -1;
+    height: 100%;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}

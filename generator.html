@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ImmuneIT</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/generator.css" />
+        <script src="./js/ai.js" type="module" defer></script>
+        <script src="./js/generator.js" defer></script>
+        <link rel="icon" href="./assets/logo-invert.png" />
+    </head>
+    <body>
+        <div id="header">
+            <div id="headerLeft">
+                <img id="logo" src="./assets/logo.png" alt="ImmuneIT Logo" />
+                <a class="headerLink" href="./index.html">ImmuneIT</a>
+            </div>
+            <div id="headerRight">
+                <a class="headerLink" href="https://github.com/Jacob-Guglielmin/ImmuneIT">GitHub</a>
+                <a class="headerLink" href="./about.html">About</a>
+                <a class="headerLink" href="./signin.html">Sign In</a>
+            </div>
+        </div>
+        <div id="rootContainer">
+            <div id="interfaceContainer">
+                <div id="promptContainer">
+                    <h1>Generate a Phishing Email</h1>
+                    <label for="orgName">Organization name:</label><input id="orgName" type="text" placeholder="Organization Name" />
+                    <label for="personName">Claimed sender:</label><input id="personName" type="text" placeholder="Person's Name" />
+                    <label for="contact">Contact details of claimed sender:</label><input id="contact" type="text" placeholder="Email Address/Phone Number" />
+                    <label for="department">Recipient's department:</label><input id="department" type="text" placeholder="Department" />
+                    <label for="extraInformation">Other information:</label><textarea id="extraInformation" placeholder="Recent events, common internal jargon, etc."></textarea>
+                    <span id="info">Any fields may be left blank, if desired.</span>
+                    <div class="button hoverEffect" onclick="generate();" style="grid-column: -2 / -1;">Generate</div>
+                </div>
+                <div id="outputContainer" class="hidden">
+                    <h1>Generated Email:</h1>
+                    <textarea id="output" readonly placeholder="Generating, please wait..."></textarea>
+                    <div class="button hoverEffect" onclick="back();" style="grid-column: 1 / 2;">Back</div>
+                    <div class="button hoverEffect" onclick="generate();" style="grid-column: -2 / -1;">Regenerate</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

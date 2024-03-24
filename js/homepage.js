@@ -1,6 +1,7 @@
 const employeeNameElement = document.getElementById("employeeName");
 const skillsChartElement = document.getElementById("skillsChart");
 const progressElement = document.getElementById("amountDone");
+const goToQuizButton = document.getElementById("goToQuizButton");
 
 const employeeID = 0;
 
@@ -48,4 +49,12 @@ function init() {
         total += employee.skills[skill];
     }
     progressElement.innerText = Math.floor(total / totalQuestions * 100) + "%";
+
+    if (total >= totalQuestions) {
+        goToQuizButton.innerText = "All questions completed!";
+    } else {
+        goToQuizButton.innerText = "Continue to quiz →";
+        goToQuizButton.classList.add("hoverEffect");
+        goToQuizButton.classList.remove("disabledLink");
+    }
 }

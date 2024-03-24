@@ -109,3 +109,8 @@
     text-decoration: none;
     font-size: 2.5rem;
 }
+
+.disabledLink {
+    pointer-events: none;
+    background: var(--color-background-alt) right;
+}

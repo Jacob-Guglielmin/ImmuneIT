@@ -49,10 +49,14 @@
     background-position: left;
 }
 
+.nonSelected {
+    background: #b5b5b5;
+}
+
 .correctSelected {
     background: #33d69d;
 }
 
 .incorrectSelected {
-    background: #868686;
+    background: #df6a6a;
 }

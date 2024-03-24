@@ -1,0 +1,27 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCjHL4mOo6DrC7W25T9sRW0wtMrYdazf6Y",
+    authDomain: "immuneit-105ca.firebaseapp.com",
+    databaseURL: "https://immuneit-105ca-default-rtdb.firebaseio.com",
+    projectId: "immuneit-105ca",
+    storageBucket: "immuneit-105ca.appspot.com",
+    messagingSenderId: "515607392468",
+    appId: "1:515607392468:web:4faf8dd7f86e7daf018b41"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase();
+
+async function getEmployeeData(employeeID) {
+    return await get(ref(db, "employees/" + employeeID)).then((snapshot) => {
+        if (snapshot.exists()) {
+            return snapshot.val();
+        } else {
+            return null;
+        }
+    });
+}
+window.getEmployeeData = getEmployeeData;

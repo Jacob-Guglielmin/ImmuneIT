@@ -70,3 +70,11 @@ function setQuestionCompleted(id, question, index) {
 }
 
 window.setQuestionCompleted = setQuestionCompleted;
+
+async function getAllEmployees() {
+    return await get(ref(db, "employees")).then((snapshot) => {
+        return snapshot.val();
+    });
+}
+
+window.getAllEmployees = getAllEmployees;

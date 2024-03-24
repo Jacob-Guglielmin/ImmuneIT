@@ -34,6 +34,7 @@
     margin-bottom: -4px;
     align-items: center;
     font-size: 1.5em;
+    font-weight: bold;
     text-align: center;
     cursor: pointer;
 }
@@ -64,7 +65,7 @@
     background: #df6a6a;
 }
 
-#nextQuestion {
+#nextQuestion, #mainMenu {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,4 +76,32 @@
     width: 250px;
     height: 50px;
     font-size: 2em;
+}
+
+.endScreen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: var(--color-background-alt);
+}
+
+.endHeader {
+    display: flex;
+    text-align: center;
+    font-size: 4.5em;
+    padding: 10px;
+    width: 100%;
+}
+
+.endText {
+    font-size: 6em;
+}
+
+.scoreValue {
+    font-size: 7em;
+    font-weight: bold;
 }

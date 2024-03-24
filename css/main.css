@@ -3,7 +3,7 @@
     --color-primary: #000;
     --color-secondary: #02dee9;
     --color-highlight: #b6ebee;
-    --color-background-alt: #e8e8e8;
+    --color-background-alt: #ececec;
 }
 
 /* latin-ext */
@@ -98,7 +98,7 @@ body {
 
 .hoverEffect {
     transition: 0.2s;
-    background: linear-gradient(to left, transparent 50%, var(--color-highlight) 50%) right;
+    background: linear-gradient(to left, var(--color-background-alt)00 50%, var(--color-highlight) 50%) right;
     background-size: 200%;
 }
 

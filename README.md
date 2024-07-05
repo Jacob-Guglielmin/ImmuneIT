@@ -3,7 +3,7 @@
 </h1>
 
 ## 🖋️ Introduction
-ImmuneIT is a cybersecurity web-application for growing businesses in healthcare, designed to be used by both managers and employees. 
+ImmuneIT is a cybersecurity web-application for growing businesses in healthcare, designed to be used by both managers and employees. In Canada, **48%** of healthcare breaches were in the healthcare industry and we have created an affordable solution for clinics to train their staff about cybersecurity risks in healthcare.
 
 Built @ <a href="https://www.ubcbiztech.com/">ProduHacks 2024</a>.
 
